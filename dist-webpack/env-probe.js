@@ -98,17 +98,17 @@ function readProcessEnvNodeEnv() {
 }
 function readProcessEnvNextPublicDefined() {
     return capture(function() {
-        return process.env.NEXT_PUBLIC_DEFINED;
+        return "from-webpack-environment-plugin";
     });
 }
 function readProcessEnvNextConfigDefined() {
     return capture(function() {
-        return process.env.NEXT_CONFIG_DEFINED;
+        return "from-webpack-environment-plugin";
     });
 }
 function readProcessEnvFoo() {
     return capture(function() {
-        return process.env.FOO;
+        return null;
     });
 }
 function readImportMetaEnvMode() {
@@ -128,7 +128,7 @@ function readImportMetaEnvViteDefined() {
 }
 function readImportMetaEnvFoo() {
     return capture(function() {
-        return undefined;
+        return null;
     });
 }
 

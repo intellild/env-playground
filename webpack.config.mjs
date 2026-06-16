@@ -65,6 +65,11 @@ export default {
     new HtmlWebpackPlugin({
       template: "./template.html",
     }),
+    new webpack.EnvironmentPlugin({
+      FOO: null,
+      NEXT_CONFIG_DEFINED: "from-webpack-environment-plugin",
+      NEXT_PUBLIC_DEFINED: "from-webpack-environment-plugin",
+    }),
     new webpack.DefinePlugin({
       __BUNDLER_NAME__: JSON.stringify("webpack"),
       "process.env.NODE_ENV": JSON.stringify("development"),

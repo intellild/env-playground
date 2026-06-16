@@ -59,6 +59,11 @@ export default defineConfig({
     new rspack.HtmlRspackPlugin({
       template: "./template.html",
     }),
+    new rspack.EnvironmentPlugin({
+      FOO: null,
+      NEXT_CONFIG_DEFINED: "from-rspack-environment-plugin",
+      NEXT_PUBLIC_DEFINED: "from-rspack-environment-plugin",
+    }),
     new rspack.DefinePlugin({
       __BUNDLER_NAME__: JSON.stringify("rspack"),
       "process.env.NODE_ENV": JSON.stringify("development"),

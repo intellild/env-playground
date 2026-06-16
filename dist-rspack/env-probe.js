@@ -92,17 +92,17 @@ function readProcessEnvNodeEnv() {
 }
 function readProcessEnvNextPublicDefined() {
     return capture(function() {
-        return process.env.NEXT_PUBLIC_DEFINED;
+        return "from-rspack-environment-plugin";
     });
 }
 function readProcessEnvNextConfigDefined() {
     return capture(function() {
-        return process.env.NEXT_CONFIG_DEFINED;
+        return "from-rspack-environment-plugin";
     });
 }
 function readProcessEnvFoo() {
     return capture(function() {
-        return process.env.FOO;
+        return null;
     });
 }
 function readImportMetaEnvMode() {
