@@ -5,9 +5,16 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "dev:next": "node scripts/next-dev.mjs",
-    "build:vite": "vite build --mode development",
-    "build:rspack": "rspack build --config rspack.config.ts --mode development",
-    "build:webpack": "webpack --config webpack.config.mjs --mode development",
+    "build:next:prod": "node scripts/next-build.mjs",
+    "build:rspack": "pnpm run build:rspack:dev",
+    "build:rspack:dev": "rspack build --config rspack.config.ts --mode development",
+    "build:rspack:prod": "rspack build --config rspack.config.ts --mode production",
+    "build:vite": "pnpm run build:vite:dev",
+    "build:vite:dev": "vite build --mode development",
+    "build:vite:prod": "vite build --mode production",
+    "build:webpack": "pnpm run build:webpack:dev",
+    "build:webpack:dev": "webpack --config webpack.config.mjs --mode development",
+    "build:webpack:prod": "webpack --config webpack.config.mjs --mode production",
     "verify": "node scripts/verify.mjs"
   },
   "dependencies": {

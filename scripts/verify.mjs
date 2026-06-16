@@ -9,18 +9,26 @@ const projectDir = path.resolve(scriptDir, "..");
 const nextBin = path.resolve(projectDir, "node_modules/.bin/next");
 
 const commands = [
-  ["pnpm", ["run", "build:vite"]],
-  ["pnpm", ["run", "build:rspack"]],
-  ["pnpm", ["run", "build:webpack"]],
+  ["pnpm", ["run", "build:vite:dev"]],
+  ["pnpm", ["run", "build:vite:prod"]],
+  ["pnpm", ["run", "build:rspack:dev"]],
+  ["pnpm", ["run", "build:rspack:prod"]],
+  ["pnpm", ["run", "build:webpack:dev"]],
+  ["pnpm", ["run", "build:webpack:prod"]],
+  ["pnpm", ["run", "build:next:prod"]],
 ];
 
 for (const [command, args] of commands) {
   await run(command, args);
 }
 
-await verifyStaticBundle("vite", "dist-vite");
-await verifyStaticBundle("rspack", "dist-rspack");
-await verifyStaticBundle("webpack", "dist-webpack");
+await verifyStaticBundle("vite dev", "dist-vite-dev");
+await verifyStaticBundle("vite prod", "dist-vite-prod");
+await verifyStaticBundle("rspack dev", "dist-rspack-dev");
+await verifyStaticBundle("rspack prod", "dist-rspack-prod");
+await verifyStaticBundle("webpack dev", "dist-webpack-dev");
+await verifyStaticBundle("webpack prod", "dist-webpack-prod");
+await verifyNextProductionOutput();
 
 const next = spawn(
   nextBin,
@@ -74,6 +82,8 @@ async function verifyStaticBundle(name, distName) {
   const html = await fs.readFile(path.join(distDir, "index.html"), "utf8");
   const envProbePath = await findEnvProbeChunk(distDir);
   const relativeEnvProbePath = path.relative(distDir, envProbePath);
+  const asyncEntryPath = await findAsyncEntryChunk(distDir);
+  const relativeAsyncEntryPath = path.relative(distDir, asyncEntryPath);
 
   if (!html.includes(relativeEnvProbePath)) {
     throw new Error(`${name} index.html does not reference ${relativeEnvProbePath}`);
@@ -90,7 +100,9 @@ async function verifyStaticBundle(name, distName) {
     }
   }
 
-  console.log(`${name} env probe chunk: ${relativeEnvProbePath}`);
+  console.log(
+    `${name} chunks: env=${relativeEnvProbePath}, async=${relativeAsyncEntryPath}`,
+  );
 }
 
 async function findEnvProbeChunk(distDir) {
@@ -104,6 +116,34 @@ async function findEnvProbeChunk(distDir) {
   }
 
   return matches[0];
+}
+
+async function findAsyncEntryChunk(distDir) {
+  const files = await walk(distDir);
+  const matches = files.filter(file => {
+    const basename = path.basename(file);
+
+    return basename.startsWith("async-entry") || basename === "async-entry.js";
+  });
+
+  if (matches.length !== 1) {
+    throw new Error(
+      `Expected exactly one async-entry chunk in ${distDir}, found ${matches.length}`,
+    );
+  }
+
+  return matches[0];
+}
+
+async function verifyNextProductionOutput() {
+  const routesManifestPath = path.resolve(projectDir, ".next-prod/routes-manifest.json");
+  const routesManifest = await fs.readFile(routesManifestPath, "utf8");
+
+  if (!routesManifest.includes('"version"')) {
+    throw new Error(".next-prod/routes-manifest.json did not look valid.");
+  }
+
+  console.log("next prod output: .next-prod");
 }
 
 async function walk(dir) {

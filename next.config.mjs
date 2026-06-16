@@ -1,6 +1,6 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  distDir: ".next",
+  distDir: process.env.NEXT_DIST_DIR ?? ".next",
   env: {
     NEXT_CONFIG_DEFINED: "from-next-config",
   },

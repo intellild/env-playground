@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">Env Bundler Probe</title><noscript data-n-css=""></noscript><script defer="" noModule="" src="/_next/static/chunks/0cz1d0mv5g_q7.js"></script><script src="/_next/static/chunks/10p-2d3xuwuwl.js" defer=""></script><script src="/_next/static/chunks/23ez9fl7ga_so.js" defer=""></script><script src="/_next/static/chunks/turbopack-06ni4o4u7eahp.js" defer=""></script><script src="/_next/static/chunks/1pc2vad09iooq.js" defer=""></script><script src="/_next/static/chunks/turbopack-0x2827qq1o-1p.js" defer=""></script><script src="/_next/static/hBqOm75NqqmOLbZoF1-X-/_buildManifest.js" defer=""></script><script src="/_next/static/hBqOm75NqqmOLbZoF1-X-/_ssgManifest.js" defer=""></script><script src="/_next/static/hBqOm75NqqmOLbZoF1-X-/_clientMiddlewareManifest.js" defer=""></script></head><body><div id="__next"><main style="color:#111;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace;margin:32px auto;max-width:1080px;padding:0 24px"><h1>Env bundler probe</h1><p>Runtime: <strong>next-turbopack</strong></p><nav aria-label="Env probe routes" style="display:flex;gap:8px"><button style="background:#111;border:1px solid #111;color:#fff;cursor:pointer;padding:6px 10px" type="button">Summary</button><button style="background:#fff;border:1px solid #111;color:#111;cursor:pointer;padding:6px 10px" type="button">process.env</button><button style="background:#fff;border:1px solid #111;color:#111;cursor:pointer;padding:6px 10px" type="button">import.meta.env</button></nav><table style="border-collapse:collapse;margin-top:24px;width:100%"><thead><tr><th style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Expression</th><th style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Result</th><th style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Notes</th></tr></thead><tbody><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">process.env.NODE_ENV</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">&quot;production&quot;</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Expected to be development for these probes.</td></tr><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">process.env.NEXT_PUBLIC_DEFINED</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">undefined</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Defined in .env.development for the Next app.</td></tr><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">process.env.NEXT_CONFIG_DEFINED</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">&quot;from-next-config&quot;</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Defined by next.config.mjs env.</td></tr><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">process.env.FOO</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">undefined</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">FOO is intentionally not defined by this project.</td></tr><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">import.meta.env.MODE</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">&quot;TypeError: Cannot read properties of undefined (reading &#x27;MODE&#x27;)&quot;</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Vite defines this from --mode development.</td></tr><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">import.meta.env.DEV</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">&quot;TypeError: Cannot read properties of undefined (reading &#x27;DEV&#x27;)&quot;</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Vite boolean for non-production modes.</td></tr><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">import.meta.env.VITE_DEFINED</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">&quot;TypeError: Cannot read properties of undefined (reading &#x27;VITE_DEFINED&#x27;)&quot;</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Defined in .env.development with the VITE_ prefix.</td></tr><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">import.meta.env.FOO</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">&quot;TypeError: Cannot read properties of undefined (reading &#x27;FOO&#x27;)&quot;</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">FOO is intentionally not defined by this project.</td></tr><tr><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">const env = import.meta.env; env.FOO</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">&quot;TypeError: Cannot read properties of undefined (reading &#x27;FOO&#x27;)&quot;</td><td style="border:1px solid #aaa;padding:8px;text-align:left;vertical-align:top">Alias access for an undefined import.meta.env field.</td></tr></tbody></table><script type="application/json" id="env-probe-data">[
+  {
+    "expression": "process.env.NODE_ENV",
+    "group": "process",
+    "note": "Expected to be development for these probes.",
+    "value": "production"
+  },
+  {
+    "expression": "process.env.NEXT_PUBLIC_DEFINED",
+    "group": "process",
+    "note": "Defined in .env.development for the Next app."
+  },
+  {
+    "expression": "process.env.NEXT_CONFIG_DEFINED",
+    "group": "process",
+    "note": "Defined by next.config.mjs env.",
+    "value": "from-next-config"
+  },
+  {
+    "expression": "process.env.FOO",
+    "group": "process",
+    "note": "FOO is intentionally not defined by this project."
+  },
+  {
+    "expression": "import.meta.env.MODE",
+    "group": "import-meta",
+    "note": "Vite defines this from --mode development.",
+    "value": "TypeError: Cannot read properties of undefined (reading 'MODE')"
+  },
+  {
+    "expression": "import.meta.env.DEV",
+    "group": "import-meta",
+    "note": "Vite boolean for non-production modes.",
+    "value": "TypeError: Cannot read properties of undefined (reading 'DEV')"
+  },
+  {
+    "expression": "import.meta.env.VITE_DEFINED",
+    "group": "import-meta",
+    "note": "Defined in .env.development with the VITE_ prefix.",
+    "value": "TypeError: Cannot read properties of undefined (reading 'VITE_DEFINED')"
+  },
+  {
+    "expression": "import.meta.env.FOO",
+    "group": "import-meta",
+    "note": "FOO is intentionally not defined by this project.",
+    "value": "TypeError: Cannot read properties of undefined (reading 'FOO')"
+  },
+  {
+    "expression": "const env = import.meta.env; env.FOO",
+    "group": "import-meta",
+    "note": "Alias access for an undefined import.meta.env field.",
+    "value": "TypeError: Cannot read properties of undefined (reading 'FOO')"
+  }
+]</script></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"hBqOm75NqqmOLbZoF1-X-","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

@@ -4,6 +4,11 @@ import { EnvProbeApp } from "./EnvProbeApp";
 import { collectEnvProbeRows } from "./env-probe";
 
 collectEnvProbeRows(__BUNDLER_NAME__);
+void import(/* webpackChunkName: "async-entry" */ "./async-entry").then(
+  ({ collectAsyncEnvProbeRows }) => {
+    collectAsyncEnvProbeRows(__BUNDLER_NAME__);
+  },
+);
 
 createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
