@@ -69,6 +69,12 @@ function collectEnvProbeRows(runtimeName) {
             group: "import-meta",
             note: "FOO is intentionally not defined by this project.",
             value: readImportMetaEnvFoo()
+        },
+        {
+            expression: "const env = import.meta.env; env.FOO",
+            group: "import-meta",
+            note: "Alias access for an undefined import.meta.env field.",
+            value: readAliasedImportMetaEnvFoo()
         }
     ];
     globalThis.__ENV_PROBE_ROWS__ = rows;
@@ -129,6 +135,12 @@ function readImportMetaEnvViteDefined() {
 function readImportMetaEnvFoo() {
     return capture(function() {
         return null;
+    });
+}
+function readAliasedImportMetaEnvFoo() {
+    return capture(function() {
+        var env = {"FOO":null,"NEXT_CONFIG_DEFINED":"from-webpack-environment-plugin","NEXT_PUBLIC_DEFINED":"from-webpack-environment-plugin","NODE_ENV":"development"};
+        return env.FOO;
     });
 }
 

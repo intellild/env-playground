@@ -63,6 +63,12 @@ function collectEnvProbeRows(runtimeName) {
             group: "import-meta",
             note: "FOO is intentionally not defined by this project.",
             value: readImportMetaEnvFoo()
+        },
+        {
+            expression: "const env = import.meta.env; env.FOO",
+            group: "import-meta",
+            note: "Alias access for an undefined import.meta.env field.",
+            value: readAliasedImportMetaEnvFoo()
         }
     ];
     globalThis.__ENV_PROBE_ROWS__ = rows;
@@ -123,6 +129,12 @@ function readImportMetaEnvViteDefined() {
 function readImportMetaEnvFoo() {
     return capture(function() {
         return /* unsupported import.meta.env.FOO */ undefined.FOO;
+    });
+}
+function readAliasedImportMetaEnvFoo() {
+    return capture(function() {
+        var env = /* unsupported import.meta.env */ undefined;
+        return env.FOO;
     });
 }
 

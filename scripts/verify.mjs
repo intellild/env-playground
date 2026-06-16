@@ -80,7 +80,11 @@ async function verifyStaticBundle(name, distName) {
   }
 
   const envProbeCode = await fs.readFile(envProbePath, "utf8");
-  for (const expected of ["process.env.FOO", "import.meta.env.FOO"]) {
+  for (const expected of [
+    "process.env.FOO",
+    "import.meta.env.FOO",
+    "const env = import.meta.env; env.FOO",
+  ]) {
     if (!envProbeCode.includes(expected)) {
       throw new Error(`${name} ${relativeEnvProbePath} is missing ${expected}`);
     }
