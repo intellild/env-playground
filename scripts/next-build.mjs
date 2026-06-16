@@ -6,7 +6,7 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.resolve(scriptDir, "..");
 const nextBin = path.resolve(projectDir, "node_modules/.bin/next");
 
-const child = spawn(nextBin, ["build", "--turbopack", "--no-mangling"], {
+const child = spawn(nextBin, ["build", "--turbopack"], {
   cwd: projectDir,
   env: {
     ...process.env,

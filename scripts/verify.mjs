@@ -23,11 +23,11 @@ for (const [command, args] of commands) {
 }
 
 await verifyStaticBundle("vite dev", "dist-vite-dev");
-await verifyStaticBundle("vite prod", "dist-vite-prod");
+await verifyStaticBundle("vite prod", "dist-vite-prod", { production: true });
 await verifyStaticBundle("rspack dev", "dist-rspack-dev");
-await verifyStaticBundle("rspack prod", "dist-rspack-prod");
+await verifyStaticBundle("rspack prod", "dist-rspack-prod", { production: true });
 await verifyStaticBundle("webpack dev", "dist-webpack-dev");
-await verifyStaticBundle("webpack prod", "dist-webpack-prod");
+await verifyStaticBundle("webpack prod", "dist-webpack-prod", { production: true });
 await verifyNextProductionOutput();
 
 const next = spawn(
@@ -77,7 +77,7 @@ function run(command, args) {
   });
 }
 
-async function verifyStaticBundle(name, distName) {
+async function verifyStaticBundle(name, distName, options = {}) {
   const distDir = path.resolve(projectDir, distName);
   const html = await fs.readFile(path.join(distDir, "index.html"), "utf8");
   const envProbePath = await findEnvProbeChunk(distDir);
@@ -85,9 +85,7 @@ async function verifyStaticBundle(name, distName) {
   const asyncEntryPath = await findAsyncEntryChunk(distDir);
   const relativeAsyncEntryPath = path.relative(distDir, asyncEntryPath);
 
-  if (!html.includes(relativeEnvProbePath)) {
-    throw new Error(`${name} index.html does not reference ${relativeEnvProbePath}`);
-  }
+  await assertChunkReferenced(name, distDir, html, relativeEnvProbePath);
 
   const envProbeCode = await fs.readFile(envProbePath, "utf8");
   for (const expected of [
@@ -98,6 +96,10 @@ async function verifyStaticBundle(name, distName) {
     if (!envProbeCode.includes(expected)) {
       throw new Error(`${name} ${relativeEnvProbePath} is missing ${expected}`);
     }
+  }
+
+  if (options.production) {
+    assertProductionOptimized(name, relativeEnvProbePath, envProbeCode);
   }
 
   console.log(
@@ -144,6 +146,42 @@ async function verifyNextProductionOutput() {
   }
 
   console.log("next prod output: .next-prod");
+}
+
+function assertProductionOptimized(name, relativeEnvProbePath, envProbeCode) {
+  if (envProbeCode.includes("\n  ") || envProbeCode.split("\n").length > 3) {
+    throw new Error(`${name} env-probe chunk does not look minified.`);
+  }
+
+  if (!/env-probe[.-][a-zA-Z0-9_-]+\.js$/.test(path.basename(relativeEnvProbePath))) {
+    throw new Error(`${name} env-probe chunk does not include a content hash.`);
+  }
+}
+
+async function assertChunkReferenced(name, distDir, html, relativeChunkPath) {
+  if (html.includes(relativeChunkPath)) {
+    return;
+  }
+
+  const files = await walk(distDir);
+  const jsFiles = files.filter(file => file.endsWith(".js"));
+  const basename = path.basename(relativeChunkPath);
+  const referencedBy = [];
+
+  for (const file of jsFiles) {
+    if (path.basename(file) === basename) {
+      continue;
+    }
+
+    const code = await fs.readFile(file, "utf8");
+    if (code.includes(basename) || code.includes(relativeChunkPath)) {
+      referencedBy.push(path.relative(distDir, file));
+    }
+  }
+
+  if (referencedBy.length === 0) {
+    throw new Error(`${name} does not reference ${relativeChunkPath}`);
+  }
 }
 
 async function walk(dir) {

@@ -3,6 +3,7 @@ import { rspack } from "@rspack/core";
 
 export default defineConfig((_, argv) => {
   const mode = argv.mode === "production" ? "production" : "development";
+  const isProduction = mode === "production";
   const outputSuffix = mode === "production" ? "prod" : "dev";
 
   return {
@@ -13,9 +14,9 @@ export default defineConfig((_, argv) => {
       main: "./src/browser-entry.tsx",
     },
     output: {
-      chunkFilename: "[name].js",
-      clean: false,
-      filename: "[name].js",
+      chunkFilename: isProduction ? "[name].[contenthash:8].js" : "[name].js",
+      clean: true,
+      filename: isProduction ? "[name].[contenthash:8].js" : "[name].js",
       path: `${import.meta.dirname}/dist-rspack-${outputSuffix}`,
     },
     resolve: {
@@ -46,8 +47,16 @@ export default defineConfig((_, argv) => {
       ],
     },
     optimization: {
-      minimize: false,
+      chunkIds: isProduction ? "deterministic" : "named",
+      concatenateModules: isProduction,
+      innerGraph: isProduction,
+      minimize: isProduction,
+      moduleIds: isProduction ? "deterministic" : "named",
+      realContentHash: isProduction,
+      runtimeChunk: isProduction ? "single" : false,
+      sideEffects: isProduction,
       splitChunks: {
+        chunks: isProduction ? "all" : "async",
         cacheGroups: {
           envProbe: {
             chunks: "all",
