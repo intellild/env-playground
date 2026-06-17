@@ -87,6 +87,7 @@ export default (_, argv) => {
       new webpack.DefinePlugin({
         __BUNDLER_NAME__: JSON.stringify("webpack"),
         "process.env.NODE_ENV": JSON.stringify(mode),
+        "import.meta.env.XXX": JSON.stringify("123"),
       }),
     ],
   };

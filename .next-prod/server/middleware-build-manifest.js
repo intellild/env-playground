@@ -1,34 +1,27 @@
 globalThis.__BUILD_MANIFEST = {
   "pages": {
     "/": [
-      "static/chunks/0p0jngiy7udfa.js",
-      "static/chunks/30r_euqzv7028.js",
-      "static/chunks/turbopack-2fuuu25cwjbmn.js"
+      "static/chunks/0f5s-v1550o8r.js",
+      "static/chunks/0-07yz8h0yy5h.js",
+      "static/chunks/turbopack-1vpzbp_2194c0.js"
     ],
     "/_app": [
-      "static/chunks/1ip18xr3cckym.js",
-      "static/chunks/30r_euqzv7028.js",
-      "static/chunks/turbopack-2nqb7qfi_bsvy.js"
+      "static/chunks/2lmnvz4ns_zqf.js",
+      "static/chunks/0-07yz8h0yy5h.js",
+      "static/chunks/turbopack-1jxx6ot4j4hmc.js"
     ],
     "/_error": [
-      "static/chunks/2iaz3eupc2s-x.js",
-      "static/chunks/30r_euqzv7028.js",
-      "static/chunks/turbopack-2k1g0zkrejax6.js"
+      "static/chunks/25d4q9fyu24bi.js",
+      "static/chunks/0-07yz8h0yy5h.js",
+      "static/chunks/turbopack-1ur3h4cor9137.js"
     ]
   },
   "devFiles": [],
-  "polyfillFiles": [
-    "static/chunks/0cz1d0mv5g_q7.js"
-  ],
+  "polyfillFiles": [],
   "lowPriorityFiles": [
-    "static/AUCawOnNQPXqxE_Tfu_RG/_buildManifest.js",
-    "static/AUCawOnNQPXqxE_Tfu_RG/_ssgManifest.js",
-    "static/AUCawOnNQPXqxE_Tfu_RG/_clientMiddlewareManifest.js"
+    "static/B5lg_VK0pMjJo1chC0Mr2/_buildManifest.js",
+    "static/B5lg_VK0pMjJo1chC0Mr2/_ssgManifest.js",
+    "static/B5lg_VK0pMjJo1chC0Mr2/_clientMiddlewareManifest.js"
   ],
-  "rootMainFiles": [
-    "static/chunks/0n3du8g5uzjhp.js",
-    "static/chunks/3fghx0hfoof6o.js",
-    "static/chunks/2iqhn35jo4obu.js",
-    "static/chunks/turbopack-2l4gsquzr7_xy.js"
-  ]
+  "rootMainFiles": []
 };

@@ -69,6 +69,12 @@ function collectEnvProbeRows(runtimeName) {
             group: "import-meta",
             note: "Alias access for an undefined import.meta.env field.",
             value: readAliasedImportMetaEnvFoo()
+        },
+        {
+            expression: "import.meta.env.XXX",
+            group: "import-meta",
+            note: "Defined via bundler define config.",
+            value: readImportMetaEnvXXX()
         }
     ];
     globalThis.__ENV_PROBE_ROWS__ = rows;
@@ -135,6 +141,11 @@ function readAliasedImportMetaEnvFoo() {
     return capture(function() {
         var env = /* unsupported import.meta.env */ undefined;
         return env.FOO;
+    });
+}
+function readImportMetaEnvXXX() {
+    return capture(function() {
+        return "123";
     });
 }
 

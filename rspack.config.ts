@@ -80,6 +80,7 @@ export default defineConfig((_, argv) => {
       new rspack.DefinePlugin({
         __BUNDLER_NAME__: JSON.stringify("rspack"),
         "process.env.NODE_ENV": JSON.stringify(mode),
+        "import.meta.env.XXX": JSON.stringify("123"),
       }),
     ],
   };

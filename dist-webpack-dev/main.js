@@ -30831,7 +30831,7 @@ function EnvProbeApp(param) {
             /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("h1", {
                 children: "Env bundler probe"
             }, void 0, false, {
-                fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                 lineNumber: 60,
                 columnNumber: 7
             }, this),
@@ -30841,13 +30841,13 @@ function EnvProbeApp(param) {
                     /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("strong", {
                         children: runtimeName
                     }, void 0, false, {
-                        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                        fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                         lineNumber: 62,
                         columnNumber: 18
                     }, this)
                 ]
             }, void 0, true, {
-                fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                 lineNumber: 61,
                 columnNumber: 7
             }, this),
@@ -30873,13 +30873,13 @@ function EnvProbeApp(param) {
                         type: "button",
                         children: item.label
                     }, item.id, false, {
-                        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                        fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                         lineNumber: 66,
                         columnNumber: 11
                     }, _this);
                 })
             }, void 0, false, {
-                fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                 lineNumber: 64,
                 columnNumber: 7
             }, this),
@@ -30897,7 +30897,7 @@ function EnvProbeApp(param) {
                                     style: cellStyle,
                                     children: "Expression"
                                 }, void 0, false, {
-                                    fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                                    fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                                     lineNumber: 94,
                                     columnNumber: 13
                                 }, this),
@@ -30905,7 +30905,7 @@ function EnvProbeApp(param) {
                                     style: cellStyle,
                                     children: "Result"
                                 }, void 0, false, {
-                                    fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                                    fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                                     lineNumber: 95,
                                     columnNumber: 13
                                 }, this),
@@ -30913,18 +30913,18 @@ function EnvProbeApp(param) {
                                     style: cellStyle,
                                     children: "Notes"
                                 }, void 0, false, {
-                                    fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                                    fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                                     lineNumber: 96,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
-                            fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                            fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                             lineNumber: 93,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
-                        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                        fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                         lineNumber: 92,
                         columnNumber: 9
                     }, this),
@@ -30936,7 +30936,7 @@ function EnvProbeApp(param) {
                                         style: cellStyle,
                                         children: row.expression
                                     }, void 0, false, {
-                                        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                                        fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                                         lineNumber: 102,
                                         columnNumber: 15
                                     }, _this),
@@ -30944,7 +30944,7 @@ function EnvProbeApp(param) {
                                         style: cellStyle,
                                         children: (0,_env_probe__WEBPACK_IMPORTED_MODULE_2__.serializeProbeValue)(row.value)
                                     }, void 0, false, {
-                                        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                                        fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                                         lineNumber: 103,
                                         columnNumber: 15
                                     }, _this),
@@ -30952,25 +30952,25 @@ function EnvProbeApp(param) {
                                         style: cellStyle,
                                         children: row.note
                                     }, void 0, false, {
-                                        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                                        fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                                         lineNumber: 104,
                                         columnNumber: 15
                                     }, _this)
                                 ]
                             }, row.expression, true, {
-                                fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                                fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                                 lineNumber: 101,
                                 columnNumber: 13
                             }, _this);
                         })
                     }, void 0, false, {
-                        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                        fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                         lineNumber: 99,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
-                fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                 lineNumber: 85,
                 columnNumber: 7
             }, this),
@@ -30980,13 +30980,13 @@ function EnvProbeApp(param) {
                 id: "env-probe-data",
                 children: JSON.stringify(rows, null, 2)
             }, void 0, false, {
-                fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+                fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
                 lineNumber: 109,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
-        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/EnvProbeApp.tsx",
+        fileName: "/Users/bytedance/projects/env-playground/src/EnvProbeApp.tsx",
         lineNumber: 50,
         columnNumber: 5
     }, this);
@@ -31028,12 +31028,12 @@ void __webpack_require__.e(/*! import() | async-entry */ "async-entry").then(__w
     children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_EnvProbeApp__WEBPACK_IMPORTED_MODULE_3__.EnvProbeApp, {
         runtimeName: "webpack"
     }, void 0, false, {
-        fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/browser-entry.tsx",
+        fileName: "/Users/bytedance/projects/env-playground/src/browser-entry.tsx",
         lineNumber: 15,
         columnNumber: 5
     }, undefined)
 }, void 0, false, {
-    fileName: "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers/src/browser-entry.tsx",
+    fileName: "/Users/bytedance/projects/env-playground/src/browser-entry.tsx",
     lineNumber: 14,
     columnNumber: 3
 }, undefined));

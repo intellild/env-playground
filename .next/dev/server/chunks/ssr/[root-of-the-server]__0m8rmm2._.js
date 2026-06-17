@@ -71,6 +71,18 @@ function collectEnvProbeRows(runtimeName) {
             group: "import-meta",
             note: "FOO is intentionally not defined by this project.",
             value: readImportMetaEnvFoo()
+        },
+        {
+            expression: "const env = import.meta.env; env.FOO",
+            group: "import-meta",
+            note: "Alias access for an undefined import.meta.env field.",
+            value: readAliasedImportMetaEnvFoo()
+        },
+        {
+            expression: "import.meta.env.XXX",
+            group: "import-meta",
+            note: "Defined via bundler define config.",
+            value: readImportMetaEnvXXX()
         }
     ];
     globalThis.__ENV_PROBE_ROWS__ = rows;
@@ -116,6 +128,15 @@ function readImportMetaEnvViteDefined() {
 }
 function readImportMetaEnvFoo() {
     return capture(()=>__TURBOPACK__import$2e$meta__.env.FOO);
+}
+function readAliasedImportMetaEnvFoo() {
+    return capture(()=>{
+        const env = __TURBOPACK__import$2e$meta__.env;
+        return env.FOO;
+    });
+}
+function readImportMetaEnvXXX() {
+    return capture(()=>__TURBOPACK__import$2e$meta__.env.XXX);
 }
 }),
 "[project]/src/EnvProbeApp.tsx [ssr] (ecmascript)", ((__turbopack_context__) => {

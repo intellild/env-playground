@@ -4,7 +4,6 @@ self.__SERVER_FILES_MANIFEST={
     "env": {
       "NEXT_CONFIG_DEFINED": "from-next-config"
     },
-    "webpack": null,
     "typescript": {
       "ignoreBuildErrors": false
     },
@@ -106,7 +105,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers",
+    "outputFileTracingRoot": "/Users/bytedance/projects/env-playground",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -306,11 +305,11 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.mjs",
     "turbopack": {
-      "root": "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers"
+      "root": "/Users/bytedance/projects/env-playground"
     },
     "distDirRoot": ".next-prod"
   },
-  "appDir": "/Users/bytedance/projects/rspack-playground/experiments/env-bundlers",
+  "appDir": "/Users/bytedance/projects/env-playground",
   "relativeAppDir": "",
   "files": [
     ".next-prod/package.json",
@@ -321,11 +320,6 @@ self.__SERVER_FILES_MANIFEST={
     ".next-prod/server/functions-config-manifest.json",
     ".next-prod/server/middleware-manifest.json",
     ".next-prod/server/middleware-build-manifest.js",
-    ".next-prod/server/app-paths-manifest.json",
-    ".next-prod/app-path-routes-manifest.json",
-    ".next-prod/server/server-reference-manifest.js",
-    ".next-prod/server/server-reference-manifest.json",
-    ".next-prod/server/prefetch-hints.json",
     ".next-prod/BUILD_ID",
     ".next-prod/server/next-font-manifest.js",
     ".next-prod/server/next-font-manifest.json",

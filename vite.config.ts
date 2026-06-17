@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     define: {
       __BUNDLER_NAME__: JSON.stringify("vite"),
+      "import.meta.env.XXX": JSON.stringify("123"),
     },
     build: {
       cssMinify: isProduction,

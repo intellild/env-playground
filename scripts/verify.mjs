@@ -92,6 +92,7 @@ async function verifyStaticBundle(name, distName, options = {}) {
     "process.env.FOO",
     "import.meta.env.FOO",
     "const env = import.meta.env; env.FOO",
+    "import.meta.env.XXX",
   ]) {
     if (!envProbeCode.includes(expected)) {
       throw new Error(`${name} ${relativeEnvProbePath} is missing ${expected}`);

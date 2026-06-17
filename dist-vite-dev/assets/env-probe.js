@@ -54,6 +54,12 @@ function collectEnvProbeRows(runtimeName) {
 			group: "import-meta",
 			note: "Alias access for an undefined import.meta.env field.",
 			value: readAliasedImportMetaEnvFoo()
+		},
+		{
+			expression: "import.meta.env.XXX",
+			group: "import-meta",
+			note: "Defined via bundler define config.",
+			value: readImportMetaEnvXXX()
 		}
 	];
 	globalThis.__ENV_PROBE_ROWS__ = rows;
@@ -104,9 +110,13 @@ function readAliasedImportMetaEnvFoo() {
 			"MODE": "development",
 			"PROD": true,
 			"SSR": false,
-			"VITE_DEFINED": "from-vite-dotenv"
+			"VITE_DEFINED": "from-vite-dotenv",
+			"XXX": "123"
 		}.FOO;
 	});
+}
+function readImportMetaEnvXXX() {
+	return capture(() => "123");
 }
 //#endregion
 export { serializeProbeValue as n, collectEnvProbeRows as t };

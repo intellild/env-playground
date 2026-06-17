@@ -65,6 +65,12 @@ export function collectEnvProbeRows(runtimeName: string): EnvProbeRow[] {
       note: "Alias access for an undefined import.meta.env field.",
       value: readAliasedImportMetaEnvFoo(),
     },
+    {
+      expression: "import.meta.env.XXX",
+      group: "import-meta",
+      note: "Defined via bundler define config.",
+      value: readImportMetaEnvXXX(),
+    },
   ];
 
   globalThis.__ENV_PROBE_ROWS__ = rows;
@@ -133,4 +139,8 @@ function readAliasedImportMetaEnvFoo() {
 
     return env.FOO;
   });
+}
+
+function readImportMetaEnvXXX() {
+  return capture(() => import.meta.env.XXX);
 }
