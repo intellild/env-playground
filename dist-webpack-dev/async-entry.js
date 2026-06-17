@@ -1,5 +1,6 @@
-"use strict";
-(self["webpackChunkenv_playground"] = self["webpackChunkenv_playground"] || []).push([["async-entry"],{
+export const __webpack_esm_id__ = "async-entry";
+export const __webpack_esm_ids__ = ["async-entry"];
+export const __webpack_esm_modules__ = {
 
 /***/ "./src/async-entry.ts"
 /*!****************************!*\
@@ -22,4 +23,4 @@ function collectAsyncEnvProbeRows(runtimeName) {
 
 /***/ }
 
-}]);
+};

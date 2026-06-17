@@ -1,5 +1,6 @@
-"use strict";
-(self["rspackChunkenv_playground"] = self["rspackChunkenv_playground"] || []).push([["env-probe"], {
+export const __rspack_esm_id = "env-probe";
+export const __rspack_esm_ids = ["env-probe"];
+export const __webpack_modules__ = {
 "./src/env-probe.ts"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
@@ -119,27 +120,27 @@ function readProcessEnvFoo() {
 }
 function readImportMetaEnvMode() {
     return capture(function() {
-        return /* unsupported import.meta.env.MODE */ undefined.MODE;
+        return import.meta.env.MODE;
     });
 }
 function readImportMetaEnvDev() {
     return capture(function() {
-        return /* unsupported import.meta.env.DEV */ undefined.DEV;
+        return import.meta.env.DEV;
     });
 }
 function readImportMetaEnvViteDefined() {
     return capture(function() {
-        return /* unsupported import.meta.env.VITE_DEFINED */ undefined.VITE_DEFINED;
+        return import.meta.env.VITE_DEFINED;
     });
 }
 function readImportMetaEnvFoo() {
     return capture(function() {
-        return /* unsupported import.meta.env.FOO */ undefined.FOO;
+        return import.meta.env.FOO;
     });
 }
 function readAliasedImportMetaEnvFoo() {
     return capture(function() {
-        var env = /* unsupported import.meta.env */ undefined;
+        var env = import.meta.env;
         return env.FOO;
     });
 }
@@ -152,4 +153,4 @@ function readImportMetaEnvXXX() {
 
 },
 
-}]);
+};

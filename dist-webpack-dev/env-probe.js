@@ -1,5 +1,6 @@
-"use strict";
-(self["webpackChunkenv_playground"] = self["webpackChunkenv_playground"] || []).push([["env-probe"],{
+export const __webpack_esm_id__ = "env-probe";
+export const __webpack_esm_ids__ = ["env-probe"];
+export const __webpack_esm_modules__ = {
 
 /***/ "./src/env-probe.ts"
 /*!**************************!*\
@@ -158,4 +159,4 @@ function readImportMetaEnvXXX() {
 
 /***/ }
 
-}]);
+};

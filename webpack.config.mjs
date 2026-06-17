@@ -15,13 +15,18 @@ export default (_, argv) => {
     context: __dirname,
     mode,
     devtool: false,
+    experiments: {
+      outputModule: true,
+    },
     entry: {
       main: "./src/browser-entry.tsx",
     },
     output: {
+      chunkFormat: "module",
       chunkFilename: isProduction ? "[name].[contenthash:8].js" : "[name].js",
       clean: true,
       filename: isProduction ? "[name].[contenthash:8].js" : "[name].js",
+      module: true,
       path: path.resolve(__dirname, `dist-webpack-${outputSuffix}`),
     },
     resolve: {
@@ -78,6 +83,7 @@ export default (_, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./template.html",
+        scriptLoading: "module",
       }),
       new webpack.EnvironmentPlugin({
         FOO: null,

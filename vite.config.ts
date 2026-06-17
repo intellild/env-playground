@@ -15,12 +15,13 @@ export default defineConfig(({ mode }) => {
     build: {
       cssMinify: isProduction,
       emptyOutDir: true,
-      minify: isProduction ? "esbuild" : false,
+      minify: isProduction,
       modulePreload: isProduction,
       outDir: `dist-vite-${outputSuffix}`,
       reportCompressedSize: isProduction,
-      rollupOptions: {
+      rolldownOptions: {
         output: {
+          format: "es",
           entryFileNames: isProduction
             ? "assets/[name]-[hash].js"
             : "assets/[name].js",

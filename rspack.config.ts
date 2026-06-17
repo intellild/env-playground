@@ -10,13 +10,18 @@ export default defineConfig((_, argv) => {
     context: import.meta.dirname,
     mode,
     devtool: false,
+    experiments: {
+      outputModule: true,
+    },
     entry: {
       main: "./src/browser-entry.tsx",
     },
     output: {
+      chunkFormat: "module",
       chunkFilename: isProduction ? "[name].[contenthash:8].js" : "[name].js",
       clean: true,
       filename: isProduction ? "[name].[contenthash:8].js" : "[name].js",
+      module: true,
       path: `${import.meta.dirname}/dist-rspack-${outputSuffix}`,
     },
     resolve: {
@@ -71,6 +76,7 @@ export default defineConfig((_, argv) => {
     plugins: [
       new rspack.HtmlRspackPlugin({
         template: "./template.html",
+        scriptLoading: "module",
       }),
       new rspack.EnvironmentPlugin({
         FOO: null,
