@@ -1,1 +1,118 @@
-"use strict";(self.webpackChunkenv_playground=self.webpackChunkenv_playground||[]).push([[357],{683(e,n,o){function t(e){var n=[{expression:"process.env.NODE_ENV",group:"process",note:"Expected to be development for these probes.",value:i(function(){return"production"})},{expression:"process.env.NEXT_PUBLIC_DEFINED",group:"process",note:"Defined in .env.development for the Next app.",value:i(function(){return"from-webpack-environment-plugin"})},{expression:"process.env.NEXT_CONFIG_DEFINED",group:"process",note:"Defined by next.config.mjs env.",value:i(function(){return"from-webpack-environment-plugin"})},{expression:"process.env.FOO",group:"process",note:"FOO is intentionally not defined by this project.",value:i(function(){return null})},{expression:"import.meta.env.MODE",group:"import-meta",note:"Vite defines this from --mode development.",value:i(function(){})},{expression:"import.meta.env.DEV",group:"import-meta",note:"Vite boolean for non-production modes.",value:i(function(){})},{expression:"import.meta.env.VITE_DEFINED",group:"import-meta",note:"Defined in .env.development with the VITE_ prefix.",value:i(function(){})},{expression:"import.meta.env.FOO",group:"import-meta",note:"FOO is intentionally not defined by this project.",value:i(function(){return null})},{expression:"const env = import.meta.env; env.FOO",group:"import-meta",note:"Alias access for an undefined import.meta.env field.",value:i(function(){return null})},{expression:"import.meta.env.XXX",group:"import-meta",note:"Defined via bundler define config.",value:i(function(){return"123"})}];return globalThis.__ENV_PROBE_ROWS__=n,console.log("[env-probe:".concat(e,"]"),n),n}function r(e){return void 0===e?"undefined":"string"==typeof e?JSON.stringify(e):String(e)}function i(e){try{return e()}catch(e){return n=e,(null!=(o=Error)&&"undefined"!=typeof Symbol&&o[Symbol.hasInstance]?o[Symbol.hasInstance](n):n instanceof o)?"".concat(e.name,": ").concat(e.message):"Thrown: ".concat(String(e))}var n,o}o.d(n,{c:()=>r,t:()=>t})}}]);
+"use strict";
+(self.webpackChunkenv_playground = self.webpackChunkenv_playground || []).push([
+  [357],
+  {
+    683(e, n, o) {
+      function t(e) {
+        var n = [
+          {
+            expression: "process.env.NODE_ENV",
+            group: "process",
+            note: "Expected to be development for these probes.",
+            value: i(function () {
+              return "production";
+            }),
+          },
+          {
+            expression: "process.env.NEXT_PUBLIC_DEFINED",
+            group: "process",
+            note: "Defined in .env.development for the Next app.",
+            value: i(function () {
+              return "from-webpack-environment-plugin";
+            }),
+          },
+          {
+            expression: "process.env.NEXT_CONFIG_DEFINED",
+            group: "process",
+            note: "Defined by next.config.mjs env.",
+            value: i(function () {
+              return "from-webpack-environment-plugin";
+            }),
+          },
+          {
+            expression: "process.env.FOO",
+            group: "process",
+            note: "FOO is intentionally not defined by this project.",
+            value: i(function () {
+              return null;
+            }),
+          },
+          {
+            expression: "import.meta.env.MODE",
+            group: "import-meta",
+            note: "Vite defines this from --mode development.",
+            value: i(function () {}),
+          },
+          {
+            expression: "import.meta.env.DEV",
+            group: "import-meta",
+            note: "Vite boolean for non-production modes.",
+            value: i(function () {}),
+          },
+          {
+            expression: "import.meta.env.VITE_DEFINED",
+            group: "import-meta",
+            note: "Defined in .env.development with the VITE_ prefix.",
+            value: i(function () {}),
+          },
+          {
+            expression: "import.meta.env.FOO",
+            group: "import-meta",
+            note: "FOO is intentionally not defined by this project.",
+            value: i(function () {
+              return null;
+            }),
+          },
+          {
+            expression: "const env = import.meta.env; env.FOO",
+            group: "import-meta",
+            note: "Alias access for an undefined import.meta.env field.",
+            value: i(function () {
+              return null;
+            }),
+          },
+          {
+            expression: "import.meta.env.XXX",
+            group: "import-meta",
+            note: "Defined via bundler define config.",
+            value: i(function () {
+              return "123";
+            }),
+          },
+        ];
+        return (
+          (globalThis.__ENV_PROBE_ROWS__ = n),
+          console.log("[env-probe:".concat(e, "]"), n),
+          n
+        );
+      }
+      function r(e) {
+        return void 0 === e
+          ? "undefined"
+          : "string" == typeof e
+            ? JSON.stringify(e)
+            : String(e);
+      }
+      function i(e) {
+        try {
+          return e();
+        } catch (e) {
+          return (
+            (n = e),
+            (
+              null != (o = Error) &&
+              "undefined" != typeof Symbol &&
+              o[Symbol.hasInstance]
+                ? o[Symbol.hasInstance](n)
+                : n instanceof o
+            )
+              ? "".concat(e.name, ": ").concat(e.message)
+              : "Thrown: ".concat(String(e))
+          );
+        }
+        var n, o;
+      }
+      o.d(n, { c: () => r, t: () => t });
+    },
+  },
+]);
